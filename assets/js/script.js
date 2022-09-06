@@ -7,72 +7,13 @@
 //   a. Can save initials and score. 
 
 function quizStart() {
-    var start = document.getElementById("wrapper-open")
+    var start = document.getElementById("wrapper")
 
     if(start) {
         clearInterval(start); 
     }
    }
 var generateBtn = document.querySelector("#start-button");
-
-var question = document.getElementById("questions"); 
-var option1 = document.getElementById("button-one");
-var option2 = document.getElementById("button-two");
-var option3 = document.getElementById("button-three"); 
-
-
-var questionBank = [
-    {
-        question: "What does the acronym API mean?",
-        option: ["1. Absolute Panic Internally", "2. Apple Pie Increment", "3. Application Programming Interface"],
-        answer: "3. Application Programming Interface"
-    }
-
-    , {
-        question: "",
-        option: ["1.", "2.", "3."],
-        answer: ""
-    }
-
-    , {
-        question: "",
-        option: ["1.", "2.", "3."],
-        answer: ""
-    }
-
-    , {
-        question: "",
-        option: ["1.", "2.", "3."],
-        answer: ""
-    }
-
-    , {
-        question: "",
-        option: ["1.", "2.", "3."],
-        answer: ""
-    }
-   
-
-   
-]
-
-
-var time = document.getElementById("time");
-var myScore = document.querySelector(".time-head");
-
-var secondsRemain = 20;
-function setTime() {
-    var timerInterval = setInterval(function() {
-        time.textContent = "Time: " + secondsRemain; 
-
-
-        if(secondsRemain === 0) {
-            clearInterval(timerInterval);
-            myScore.textContent = "Your score is: " + secondsRemain; 
-        }
-    }
-    )
-}
 
 
 generateBtn.addEventListener("click", quizStart())
