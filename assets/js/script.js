@@ -6,9 +6,15 @@
 //4. All questions answered or timer reaches 0, game is over. 
 //   a. Can save initials and score. 
 
+function quizStart() {
+    var start = document.getElementById("wrapper-open")
 
+    if(start) {
+        clearInterval(start); 
+    }
+   }
+var generateBtn = document.querySelector("#start-button");
 
-var generateBtn = document.querySelector("#generate");
 var question = document.getElementById("questions"); 
 var option1 = document.getElementById("button-one");
 var option2 = document.getElementById("button-two");
@@ -57,7 +63,7 @@ var myScore = document.querySelector(".time-head");
 var secondsRemain = 20;
 function setTime() {
     var timerInterval = setInterval(function() {
-        time,textContent = "Time: " + secondsRemain; 
+        time.textContent = "Time: " + secondsRemain; 
 
 
         if(secondsRemain === 0) {
