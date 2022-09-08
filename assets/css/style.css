@@ -10,6 +10,8 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
+  color: hsl(206, 17%, 28%);
 }
 
 body {
@@ -47,6 +49,7 @@ header {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  text-align: center; 
 }
 
 .wrapper h1 {
@@ -67,6 +70,11 @@ header {
   text-align: center; 
 }
 
+.card-footer button {
+  background: white; 
+  border: white; 
+}
+
 .card-header::after {
   content: " ";
   display: block;
@@ -78,13 +86,14 @@ header {
 
 .card-footer {
   text-align: center;
+  background: white; 
 }
 
 .card-footer::before {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: white;
   height: 2px;
 }
 

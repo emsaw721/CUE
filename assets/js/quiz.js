@@ -7,7 +7,7 @@
 //   a. Can save initials and score. 
 
 
-var questionContentEl = document.getElementById("question-content")
+var questionContentEl = document.getElementById("container")
 
 var myScore = document.querySelector(".time-head-quiz");
 var secondsRemain = 15;
@@ -27,41 +27,41 @@ var questionBank = [
 
     {
         question: "What does the acronym API mean?",
-        option1: "1. Absolute Panic Internally", 
-        option2: "2. Apple Pie Increment", 
+        option1: "1. Absolute Panic Internally",
+        option2: "2. Apple Pie Increment",
         option3: "3. Application Programming Interface",
         answer: "3. Application Programming Interface"
     },
 
     {
         question: "How do you comment out on JavaScript?",
-        option1: "1. *", 
-        option2: "2. //", 
+        option1: "1. *",
+        option2: "2. //",
         option3: "3. #",
         answer: "2. //"
     },
 
     {
         question: "How do you indicate a language in HTML?",
-        option1: "1. eng", 
-        option2: "2. lang=eng", 
+        option1: "1. eng",
+        option2: "2. lang=eng",
         option3: "3. lang='eng'",
         answer: "3. lang='eng'"
     },
 
     {
         question: "Why 4?",
-        option1: "1. Absolute Panic Internally", 
-        option2: "2. Apple Pie Increment", 
-        option3: "3. Application Programming Interface", 
+        option1: "1. Absolute Panic Internally",
+        option2: "2. Apple Pie Increment",
+        option3: "3. Application Programming Interface",
         answer: "3. Application Programming Interface"
     },
 
 
     {
         question: "Why 5?",
-        option1: "1. Absolute Panic Internally", 
-        option2: "2. Apple Pie Increment", 
+        option1: "1. Absolute Panic Internally",
+        option2: "2. Apple Pie Increment",
         option3: "3. Application Programming Interface",
         answer: "3. Application Programming Interface"
     },
@@ -70,7 +70,6 @@ var questionBank = [
 
 var questionsList = Math.floor(Math.random() * questionBank.length)
 var currentQuestion = questionBank[questionsList]
-// question.innerText = currentQuestion.question
 
 
 
@@ -85,89 +84,82 @@ function quizQuestion() {
 
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-    var optionOneEl = document.createElement("button");
-    optionOneEl.className = "btn"; 
-    optionOneEl.textContent= currentQuestion.option1; 
 
-   var container = document.getElementById("container"); 
+
+    var optionOneEl = document.createElement("button");
+    optionOneEl.className = "btn";
+    optionOneEl.textContent = currentQuestion.option1;
+    
+
+    var container = document.getElementById("container");
     container.appendChild(optionOneEl);
+    optionOneEl.addEventListener("click", quizGame)
 
     var optionTwoEl = document.createElement("button");
-    optionTwoEl.className = "btn"; 
-    optionTwoEl.textContent = currentQuestion.option2; 
+    optionTwoEl.className = "btn";
+    optionTwoEl.textContent = currentQuestion.option2;
+    
 
-   var container = document.getElementById("container"); 
+    var container = document.getElementById("container");
     container.appendChild(optionTwoEl);
+    optionTwoEl.addEventListener("click", quizGame)
 
     var optionThreeEl = document.createElement("button");
-    optionThreeEl.className = "btn"; 
+    optionThreeEl.className = "btn";
     optionThreeEl.textContent = currentQuestion.option3
+    
 
-   var container = document.getElementById("container"); 
+    var container = document.getElementById("container");
     container.appendChild(optionThreeEl);
-
-    }, false); 
-
-} 
-
-
-
-// iterate through choices 
-//for each button, dynamically create text content 
+    optionThreeEl.addEventListener("click", quizGame)
 
 
 
 
+    function quizGame() {
 
-// var optionsButtonHandler = function (event) {
-//     var target = event.target;
+        if ( === answer) {
+            window.alert("Correct!")
+            // secondsRemain = secondsRemain + 5;
+            
+        }
+        else {
+            window.alert("Incorrect!")
+            // secondsRemain = secondsRemain - 5;
+            
 
-//     if (target.matches(".btn")) {
-//         quizQuestion()
-//     }
+        }
 
-// }
+        // else if (option2 === true) {
+        //     window.alert("Correct!")
+        //     // secondsRemain = secondsRemain + 5;
+            
+        // }
+        // else if (option2 === false) {
+        //     window.alert("Incorrect!")
+        //     // secondsRemain = secondsRemain - 5;
+            
+        // }
 
+        // else if (option3 === true) {
+        //     window.alert("Correct!")
+        //     // secondsRemain = secondsRemain + 5;
+             
+        // }
+        // else if (option3 === false) {
+        //     window.alert("Incorrect!")
+        //     // secondsRemain = secondsRemain - 5;
+            
+        // }
 
-// function quizGame() {
+    }
 
+        return quizQuestion;
 
-//     if (option1 === true) {
-//         window.alert("Correct!")
-//         secondsRemain = secondsRemain + 5;
-//     }
-//     else if (option1 === false) {
-//         window.alert("Incorrect!")
-//         secondsRemain = secondsRemain - 5;
-
-//     }
-
-//     if (option2 === true) {
-//         window.alert("Correct!")
-//         secondsRemain = secondsRemain + 5;
-//     }
-//     else if (option2 === false) {
-//         window.alert("Incorrect!")
-//         secondsRemain = secondsRemain - 5;
-//     }
-
-//     if (option3 === true) {
-//         window.alert("Correct!")
-//         secondsRemain = secondsRemain + 5;
-//     }
-//     else if (option3 === false) {
-//         window.alert("incorrect!")
-//         secondsRemain = secondsRemain - 5;
-//     }
-
-
+}
 
 
 
-
-
-// }
 
 
 
@@ -176,5 +168,3 @@ function quizQuestion() {
 quizQuestion();
 
 
-
-// questionContentEl.addEventListener("click", optionsButtonHandler) 
