@@ -45,6 +45,16 @@ header {
     color:rgb(145, 9, 195); 
 }
 
+.high-score-title {
+  color: rgb(145, 9, 195); 
+  text-align: center; 
+}
+
+.high-score-title h1 {
+  text-align: center; 
+
+}
+
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;

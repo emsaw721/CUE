@@ -118,7 +118,7 @@ function quizQuestion() {
 
     function quizGame() {
 
-        if ( === answer) {
+        if ("click" === answer) {
             window.alert("Correct!")
             // secondsRemain = secondsRemain + 5;
             
@@ -157,12 +157,6 @@ function quizQuestion() {
         return quizQuestion;
 
 }
-
-
-
-
-
-
 
 
 quizQuestion();
