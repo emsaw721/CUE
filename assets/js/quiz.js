@@ -7,7 +7,7 @@
 //   a. Can save initials and score. 
 
 
-
+var questionContentEl = document.getElementById("question-content")
 var myScore = document.querySelector(".time-head-quiz");
 
 var secondsRemain = 15;
@@ -27,78 +27,92 @@ function setTime() {
 // questions
 
 var question = document.querySelector("question-number");
-var option1 = document.getElementById("button-one");
-var option2 = document.getElementById("button-two");
-var option3 = document.getElementById("button-three");
+var options = document.getElementById("button");
+
 
 var questionsList = Math.floor(Math.random() * questionBank.length)
 var currentQuestion = questionBank[questionsList]
 question.innterText = currentQuestion.question
 
-//function setQuizText() {
-    //question.textContent = questionBank;
-//}
+
 
 
 var questionBank = [
   
-    ,{
+    {
         question: "What does the acronym API mean?",
-        option1: "1. Absolute Panic Internally",
-        option2: "2. Apple Pie Increment",
-        option3: "3. Application Programming Interface",
+        options: ["1. Absolute Panic Internally","2. Apple Pie Increment","3. Application Programming Interface"],
         answer: "3. Application Programming Interface"
-    }
+    },
 
-    , {
-        question: "",
-        option1: "1.",
-        option2: "2.",
-        option3: "3.",
-        answer: ""
-    }
+    {
+        question: "Why is this happening to me?",
+        options: ["1. Absolute Panic Internally","2. Apple Pie Increment","3. Application Programming Interface"],
+        answer: "3. Application Programming Interface"
+    },
 
-    , {
-        question: "",
-        option1: "1.",
-        option2: "2.",
-        option3: "3.",
-        answer: ""
-    }
+    {
+        question: "What is love?",
+        options: ["1. Absolute Panic Internally","2. Apple Pie Increment","3. Application Programming Interface"],
+        answer: "3. Application Programming Interface"
+    },
 
-    , {
-        question: "",
-        option1: "1.",
-        option2: "2.",
-        option3: "3.",
-        answer: ""
-    }
+    {
+        question: "Why 4?",
+        options: ["1. Absolute Panic Internally","2. Apple Pie Increment","3. Application Programming Interface"],
+        answer: "3. Application Programming Interface"
+    },
 
-    , {
-        question: "",
-        option1: "1.",
-        option2: "2.",
-        option3: "3.",
-        answer: ""
-    }
+
+    {
+        question: "Why 5?",
+        options: ["1. Absolute Panic Internally","2. Apple Pie Increment","3. Application Programming Interface"],
+        answer: "3. Application Programming Interface"
+    },
 
 ]
 
 
 
-//function quizQuestion() {
-    //var question = JSON.parse(questionBank)
-   //var questionText = document.querySelector("#questions");
+function quizQuestion() {
+   var questionText = document.querySelector("#questions");
 
-    //questionText.value = question; 
+    questionText.textContent = currentQuestion.question; 
 
-//}
+    for(i=0; i < currentQuestion.choices.length; i++) {
+        var choice = currentQuestion.options[i]//use this to dynamically create buttons or text content
+        var optionEl = document.createElement("option")
+        optionEl.className = "data-number";
+        optionEl.setAttribute("option", choice)
+        optionEl.appendChild(optionEl)
+    }
+
+    function addTextContent {
+        var element = document.createElement("text");
+        element.setAttribute("text", options)
+    }
+
+    var getButtonText = addTextContent
+    // iterate through choices 
+    //for each button, dynamically create text content 
+ 
+}
+var optionsButtonHandler = function(event) {
+    var target = event.target; 
+
+    if (target.matches(".btn")) {
+        quizGame() 
+    }
+
+}
+
 
 function quizGame() {
 
 
     if (option1 === true) {
         window.alert("Correct!")
+        secondsRemain = secondsRemain + 5;
     }
     else if (option1 === false) {
         window.alert("Incorrect!")
@@ -108,6 +122,7 @@ function quizGame() {
 
     if (option2 === true) {
         window.alert("Correct!")
+        secondsRemain = secondsRemain + 5;
     }
     else if (option2 === false) {
         window.alert("Incorrect!")
@@ -116,6 +131,7 @@ function quizGame() {
 
     if (option3 === true) {
         window.alert("Correct!")
+        secondsRemain = secondsRemain + 5; 
     }
     else if (option3 === false) {
         window.alert("incorrect!")
@@ -124,38 +140,17 @@ function quizGame() {
 
 
 
-    options.forEach(option => {
-        var number = option.dataset["number"]
-        option.innerText = currentQuestion["option" + number]
-    }
-    )
 
 
-    JSON.parse(questionBank);
+   
 
 }
 
-options.forEach(option => {
-    option.addEventListener("click")
-    if ("click" === false) {
-        var selectedOption = EventTarget
-        var selectedAnswer = selectedOption.dataset["number"]
-        incrementTime(setTime() - 5)
-
-    }
-
-    if ("click" === true) {
-        var selectedOption = EventTarget
-        var selectedAnswer = selectedOption.dataset["number"]
-        incrementTime(setTime() + 5)
-
-    }
-
-    setTimeout(() => {
-        quizGame() 
-    })
 
 
-}
-)
 
+
+quizQuestion(); 
+
+
+questionContentEl.addEventListener("click", optionsButtonHandler);

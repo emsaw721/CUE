@@ -9,9 +9,6 @@
 function quizStart() {
     var start = document.getElementById("wrapper")
 
-    if(start) {
-        clearInterval(start); 
-    }
    }
 var generateBtn = document.querySelector("#start-button");
 
